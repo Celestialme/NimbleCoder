@@ -1,0 +1,41 @@
+:root{
+    --background-color:#323437;
+    --primary-text-color:#646669;
+    --secondary-text-color:#e2b714;
+    --title-color:white;
+    --footer-color:#646669;
+    --wrong-color:#c14652;
+    --right-color:#bebdb4;
+    --caret-color:#ddb116;
+    --reset-icon-color:#646669
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    user-select: none;
+  }
+body{
+    font-family: 'Lexend Deca', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    overflow: hidden;
+  }
+.hidden{
+        visibility: hidden;
+    }
+.visible{
+        visibility: visible !important;
+    }
+
+  .writer .wrong{
+        color:var(--wrong-color)
+        
+      }
+    .writer .right{
+        color:var(--right-color)
+        
+      }
