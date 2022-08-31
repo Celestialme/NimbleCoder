@@ -13,9 +13,9 @@ switch (true){
     case characters[get(caretPos) ] =="\t" && key!="Tab":
     return
      // if next character is newline space or tab and user hits correct key means new word start;
-    case characters[get(caretPos) ] ==" " && characters[get(caretPos)+1 ] !=" ":
-      case characters[get(caretPos) ] =="\n" && characters[get(caretPos)+1 ] !=" ":
-      case characters[get(caretPos) ] =="\t" && characters[get(caretPos)+1 ] !=" " :
+    case characters[get(caretPos) ] ==" " && characters[get(caretPos)+1 ] !=" " && characters[get(caretPos)-1 ] !=" ":
+      case characters[get(caretPos) ] =="\n" && characters[get(caretPos)+1 ] !=" " && characters[get(caretPos)-1 ] !=" ":
+      case characters[get(caretPos) ] =="\t" && characters[get(caretPos)+1 ] !=" "  && characters[get(caretPos)-1 ] !=" " :
       get(wrongSequence) &&  wrongCount.update(old=>++old)
       wrongSequence.set(false);
       word_count.update(old=>++old)

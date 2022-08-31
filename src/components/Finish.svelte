@@ -1,7 +1,7 @@
 <div class="chart-container">
     <div class="results">
         <p class="title">WPM</p>
-        <p class="value">{Math.floor($word_count*(60/$seconds))||0}</p>
+        <p class="value">{Math.floor(($word_count-$wrongCount)*(60/$seconds))||0}</p>
         <p class="title">ACC</p>
         <p class="value">{(Math.floor(100 - ($wrongCount/$word_count * 100))||0)+"%"}</p>
         <p class="test-type"> test type</p>
@@ -10,6 +10,11 @@
     </div>
     <div  class="chart">
         <canvas use:initialization/>
+        <div class="raw">
+            <p >Raw</p>
+            <p class="raw-value">{Math.floor($word_count*(60/$seconds))||0}</p>
+
+        </div>
     </div>
     
 </div>
@@ -17,15 +22,27 @@
 
 <ResetIcon on:click={()=>reset()}/>
 <style>
-    .test-type{
+    .test-type,.raw{
         margin-top:30px;
         color: #646669;
     font-size: 1rem;
     line-height: 1rem;
     margin-bottom: 0.25rem;
     }
-    .time-language{
+    .time-language,.raw-value{
         color:var(--secondary-text-color);
+    }
+    .raw-value{
+        font-size: 40px;
+        margin-top: 15px;
+        text-align:center;
+    }
+    .raw{
+        display:inline-block;
+        margin-top:10px;
+        margin-left:30px;
+        text-align: center;
+     
     }
     .chart-container{
         height: 50vh;
