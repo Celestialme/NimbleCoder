@@ -129,7 +129,7 @@ if ($seconds==0) return
 }
 
 </script>
-<svelte:window on:click={()=>writer?.blur()}/>
+<svelte:window on:click={()=>writer?.blur()} on:keydown={(e)=>e.key=="+"&& e.shiftKey && reset() }/>
 <h1 ><img src="./keyboard.svg" alt="keyboard icon"> NimbleCoder</h1>
 <Controls/>
 {#if !$finished}
